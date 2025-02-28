@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortcutLink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        /* ✨ Dynamic Gradient Background */
+        body {
+            font-family: 'Patrick Hand', cursive;
+            text-align: center;
+            background: linear-gradient(135deg, #fddde6, #fef6e4, #cce5ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 🎀 Floating Pop-Up */
+        .container {
+            max-width: 420px;
+            background: white;
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff8fab;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        /* 📌 Link Containers */
+        .link-container {
+            margin-top: 20px;
+        }
+
+        .link-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            color: black;
+        }
+
+        .github { background: #D9FCD9; }
+        .salesforce { background: #B4F2F1; }
+        .linkedin { background: #E2C5E5; }
+
+        .link-box:hover {
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            transform: scale(1.05);
+        }
+
+        /* ✨ Copy Confirmation Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff8fab;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translateY(20px); }
+            20%, 80% { opacity: 1; transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>✨ Quick Links ✨</h2>
+        <div class="link-container">
+            <div class="link-box github" onclick="copyToClipboard('https://github.com/Noahpreet')">
+                🐱 GitHub
+            </div>
+            <div class="link-box salesforce" onclick="copyToClipboard('https://www.salesforce.com/trailblazer/wkbkpiigan9fp2npct')">
+                ☁️ Salesforce
+            </div>
+            <div class="link-box linkedin" onclick="copyToClipboard('https://www.linkedin.com/in/preetiparna-mishra-68b43b25b/')">
+                💼 LinkedIn
+            </div>
+        </div>
+    </div>
+
+    <!-- 📝 Cute Toast Message -->
+    <div id="toast" class="toast">Copied! ✨</div>
+
+    <script>
+        function copyToClipboard(link) {
+            navigator.clipboard.writeText(link).then(() => {
+                showToast();
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+
+        function showToast() {
+            let toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

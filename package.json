@@ -1,0 +1,26 @@
+{
+  "name": "shortcutlink",
+  "version": "1.0.0",
+  "description": "A profile links popup with keyboard shortcuts",
+  "main": "main.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.shortcutlink.app",
+    "productName": "ShortcutLink",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
