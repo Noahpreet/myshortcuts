@@ -14,12 +14,13 @@ A **minimalist and cute** quick links popup designed with **pastel colors** and 
 
 
 ## 🚀 Setup & Usage
+**Pre-requisites**:
+bash
+npm init -y
+npm install electron electron-builder
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/yourusername/shortcutlink.git
-   ```
-2. **Open the `index.html` file** in a browser. 🎉
+ 
+**Open the `index.html` file** in a browser. 🎉
 
 ## 🛠️ Technologies Used
 
@@ -39,6 +40,12 @@ A **minimalist and cute** quick links popup designed with **pastel colors** and 
 - Replace the links with your own URLs.
 - Adjust the **gradient background** in the `body` styles.
 
+## How to Run 
+**Use these commands in the terminal to run**
+npm start
+npm run dist
+
+**If you face any errors in installing the electron app, just pin after running to the taskbar!**
 ## 🤝 Contributing
 
 Got ideas to improve it? Feel free to **fork the repo**, submit a PR, or open an issue!
